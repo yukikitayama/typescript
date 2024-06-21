@@ -26,3 +26,18 @@ try {
 **Higher-order functions** are functions that operate on other functions, either by taking them as arguments or by returning them.
 
 **Factory functions** are functions that return object instances.
+
+**Closure** is the combination of the function and it's environment. Functions have a reference to all variables declared in the same scope as well as any outer scopes. These scopes are function's **lexical environment**. You can declare functions withiin other functions and return them. The inner function has access to any variables declared by outer function.
+
+```
+function createAdder(a) {
+  return function add(b) {
+    const sum = a + b;
+    return sum;
+  }
+}
+const addTo2 = createAdder(2);
+addTo2(5); // 7
+```
+
+
