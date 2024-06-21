@@ -87,3 +87,10 @@ if (a && b) {
 a && b && func();
 ```
 
+**Reduce** iterates over each value in an array and merges each value into an **accumulator** variable in some way. The first argument is a callback that takes in the current `accumulator` value and each array element and returns a new `accumulator` value. The second argument is the value the `accumulator` is initialized as. The final value of `accumulator` after looping over the entire array is returned.
+
+```
+const nums = [1, 2, 3];
+const sum = nums.reduce((accumulator, val) => accumulator + val, 0);
+console.log(sum); // 6
+```
