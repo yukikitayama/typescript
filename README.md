@@ -40,4 +40,50 @@ const addTo2 = createAdder(2);
 addTo2(5); // 7
 ```
 
+**Callback** is a function passed as an argument to another function. 
+
+Array
+
+In JavaScript, you can read and write to indices that aren't in the range `[0, arr.length)`, though it's discouraged to do so because it's confusing.
+
+In JavaScript, arrays can have elements appended with an average O(1) time by `arr.push(element)`, and you can build up a transformed array by appending each element to the end one-by-one
+
+For if statements, value wil be **coerced** into a boolean based on it's **truthiness**. This exists because it's convenient. All values are considered **truthy** except the following.
+- `false`
+- All forms of zero, `0`, `-0`, etc
+- `NaN`
+- `""` empty string
+- `null`
+- `undefined`
+
+JavaScript **logical operators** don't return booleans; they return one of the two operands provided to them. The logical operator will return the last value it needed to evaluate.
+- `||` OR operator
+  - Returns the first value if the first value is truthy without evaluating the 2nd value. Otherwise, it returns the second value
+- `&&` AND operator
+  - Returns the first value if the first value is falsy without evaluating the 2nd value. Otherwise, it returns the second value.
+- `??` Nullish coalescing operator
+  - Same as `||` except it only treats `null` and `undefined` as falsy.
+
+```
+// Before
+let val;
+if (a) {
+  val = a;
+} else if (b) {
+  val = b;
+} else {
+  val = c;
+}
+
+// After
+const val = a || b || c;
+
+// Before
+if (a && b) {
+  func();
+}
+
+// After
+a && b && func();
+```
 
