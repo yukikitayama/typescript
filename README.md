@@ -94,3 +94,10 @@ const nums = [1, 2, 3];
 const sum = nums.reduce((accumulator, val) => accumulator + val, 0);
 console.log(sum); // 6
 ```
+
+**Function composition** uses the output of one function as the input of another function.
+
+`Array.reduceRight()` method applies a function against an accumulator and each element in the array from right to left to reduce it to a single value. `reduceRight()` simplifies the code and provide functional programming style.
+
+The accumulator is a value that is being built up with each iteration and returned at the end.
+
