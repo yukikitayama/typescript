@@ -27,7 +27,7 @@ try {
 
 **Factory functions** are functions that return object instances.
 
-**Closure** is the combination of the function and it's environment. Functions have a reference to all variables declared in the same scope as well as any outer scopes. These scopes are function's **lexical environment**. You can declare functions withiin other functions and return them. The inner function has access to any variables declared by outer function.
+**Closure** is the combination of the function and it's environment. Functions have a reference to all variables declared in the same scope as well as any outer scopes. These scopes are function's **lexical environment**. You can declare functions withiin other functions and return them. The inner function has access to any variables declared by outer function. When a function is defined inside another function, a closure is created.
 
 ```
 function createAdder(a) {
