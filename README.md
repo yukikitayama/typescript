@@ -125,5 +125,5 @@ Promise has 3 states
 - **Allows parallel execution of multiple asynchronous operations and combine the resutls**.
 - **Used to fetch data from multiple APIs simultaneously**.
 
-
+`setTimeout(callback, millisecond)` is a web API method to delay in the code execution. It's a method to call function or evaluate expression after a specified milliseconds. After the millisecond, callback is called.
 
