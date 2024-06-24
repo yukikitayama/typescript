@@ -101,3 +101,29 @@ console.log(sum); // 6
 
 The accumulator is a value that is being built up with each iteration and returned at the end.
 
+**Promise** is the eventual completion (or failure) of an asynchronous operation and allows us to work with the results when they become available. It's a way to handle asynchronous code in an organized and structured manner. Promise provides `.then()` and `.catch()` to handle the resolved values or errors.
+
+Promise has 3 states
+- Pending: Initial state. The asynchronous operation is ongoing, hasn't completed yet.
+- Fulfilled: Asynchronous operation is successfully completed. Promised result or value is available
+- Rejected: Asynchronous operation fails or has an error.
+
+`async` and `await` simplifies working with promise. It makes asynchronous code appear like synchronous code.
+- `async`
+  - Defines asynchronous function. The function returns a **promise**.
+  - **Non-promises returned from async functions are automatically wrapped in promises**.
+- `await`
+  - Pauses the execution of asynchronous function until a promise is resolved.
+  - Can only be used in `async` function
+  - **`await` within `async` function allows you to write asynchronous code in a sequential and readable manner, without explicit promise chaining using `.then()`**.
+
+`Promise.all()`
+- Handles multiple promises concurrently. 
+- It takes array of promises and returns a new promise that resolves when all the promises in array have resolved. 
+- It waits for all the promises to settle. 
+- **If any of the promises are `rejected`, the returned promise is `rejected` with the reason of the first `rejected` promise**.
+- **Allows parallel execution of multiple asynchronous operations and combine the resutls**.
+- **Used to fetch data from multiple APIs simultaneously**.
+
+
+
