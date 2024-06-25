@@ -127,3 +127,16 @@ Promise has 3 states
 
 `setTimeout(callback, millisecond)` is a web API method to delay in the code execution. It's a method to call function or evaluate expression after a specified milliseconds. After the millisecond, callback is called.
 
+`setTimeout()` vs. `setInterval()`
+- `setTimeout()` executes a function, after waiting the milliseconds
+- `setInterval()` repeats a function at every milliseconds time interval
+
+`setInterval(function, delay milliseconds)` is used to repeat executing a function or code snippet with a fixed time delay between each call. It returns **interval ID (unique numeric value)**. The ID can be used later to identigy and control. `clearInterval(intervalID)` to cancel. **`setInterval` doesn't immediately call the function, so you need to manually call the function before setting the interval**.
+
+**Interval cancellation**
+- Auto-saving in editing applications
+  - Use interval cancellation to schedule auto-saving at regular intervals. If the user explicitly saves the document or exits the app, you can cancel the interval to prevent unnecessaru auto-saving that periodically saves changes.
+- Animation and slideshow timinings
+- Time-based reminders
+  - Once the user acknowledges the reminder or the task is completed, cancel the interval to stop further reminders.
+
