@@ -140,3 +140,20 @@ Promise has 3 states
 - Time-based reminders
   - Once the user acknowledges the reminder or the task is completed, cancel the interval to stop further reminders.
 
+`JSON.parse()` converts JSON string into JavaScript `object`, `array` or primitive value.
+
+To determine the number of elements in anarray, or the number of key-values pairs in an object
+- For arrays, use `.length` property
+- For objects, use `Object.keys()`, because `length` property isn't available.
+
+```
+const spiders = ["Peter", "Gwen", "Miles"];
+console.log(spiders.length); // Output: 3
+
+const person = {
+  name: "Pavitr Prabhakar",
+  age: 17,
+  city: "Mumbattan"
+};
+console.log(Object.keys(person).length); // Output: 3
+```
