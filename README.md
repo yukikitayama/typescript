@@ -157,3 +157,16 @@ const person = {
 };
 console.log(Object.keys(person).length); // Output: 3
 ```
+
+**Prototype** is a sort of template object that is used as the basis for creating other objects. All objects inherit properties and methods from their prototypes. The object can be extended with custom methods or properties.
+
+**Extending a built-in prototype like array can potentially be risky as it might lead to unforeseen behavior if your method name clashes with others. Overriding built-in methods is generally discouraged.
+
+`this` https://leetcode.com/problems/array-prototype-last/editorial/
+
+A crucial concept to grasp in JavaScript is that the `this` value in a function object is usually not fixed. It often varies based on the context in which the function is invoked. The `this` value within a function is typically determined at the time of its execution, rather than at the moment of its definition.
+
+`bind` https://leetcode.com/problems/array-prototype-last/editorial/
+
+`bind` can set the `this` value in methods. This method creates a new function, when invoked, has its `this` keyword set to the provided value. The new function is **permanently bound `this` value, regardless of how the function is later called**. Once you have used `bind` to set the `this` value in a function, it cannot be changed.
+
