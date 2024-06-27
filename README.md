@@ -172,6 +172,8 @@ A crucial concept to grasp in JavaScript is that the `this` value in a function 
 
 `call` https://leetcode.com/problems/array-prototype-foreach/editorial/
 
+`call()` is a predefined JavaScript method to invoke a method with an owner object as an argument. It allows an object to use a method belonging to another object. It allows us to provide `this` argument to a function in addition to the original arguments of the function.
+
 For loop
 
 `for (const element of arr) {}`
