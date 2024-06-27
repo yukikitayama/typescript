@@ -170,3 +170,10 @@ A crucial concept to grasp in JavaScript is that the `this` value in a function 
 
 `bind` can set the `this` value in methods. This method creates a new function, when invoked, has its `this` keyword set to the provided value. The new function is **permanently bound `this` value, regardless of how the function is later called**. Once you have used `bind` to set the `this` value in a function, it cannot be changed.
 
+`call` https://leetcode.com/problems/array-prototype-foreach/editorial/
+
+For loop
+
+`for (const element of arr) {}`
+
+**Chunking an array** allows us to divide a large array into smaller, manageable subarrays. It can be used for pagination, parallel processing, or dividing data for distributed systems.
