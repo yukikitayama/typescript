@@ -177,3 +177,24 @@ For loop
 `for (const element of arr) {}`
 
 **Chunking an array** allows us to divide a large array into smaller, manageable subarrays. It can be used for pagination, parallel processing, or dividing data for distributed systems.
+
+Sorting
+
+`Array.sort()` sorts the elements of an array in place (**mutating** or **in-place** operation). It doesn't work as expected for arrays of numbers and arrays of objects, so need **compare function**. By default, it sorts elements as strings, which can lead to unexpected results when sorting numbers.
+
+Compare function
+- Return negative value: `a` should come before `b`
+- Return positive value: `a` should come after `b`
+- Return 0: `a` and `b` unchanged.
+
+Sort numbers in ascending order by **compare function**. This function subtracts b from a. If a is less than b, a negative value is returned, placing a before b.
+```
+let numbers = [40, 1, 5, 200];
+numbers.sort((a, b) => a - b);
+console.log(numbers); // [1, 5, 40, 200]
+```
+
+`Array.prototype.sort()` has **time complexity of `O(NlogN)`** in most JavaScript engines, including V8 (used in Chrome and Node.js).
+
+Examples of stable sort algorithms include Merge Sort and TimSort (used by Python and Java, and also in V8 for arrays longer than 10 elements). On the contrary, QuickSort and HeapSort are examples of unstable sorting algorithms.
+
