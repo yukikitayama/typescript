@@ -160,7 +160,15 @@ console.log(Object.keys(person).length); // Output: 3
 
 **Prototype** is a sort of template object that is used as the basis for creating other objects. All objects inherit properties and methods from their prototypes. The object can be extended with custom methods or properties.
 
+JavaScript is a prototype-based language. It means that inheritance in JavaScript is implemented through a system of prototypes. Each object has a link to another prototype. If a property doesn't exist in an object, it tries to keep finding in object's prototype, prototype's prototypes, ... until null prototype.
+
+**Prototype chain** 
+
+When JavaScript tries to access a property of an object, it first checks the object itself. If it doesn't find the property there, it ascends the prototype chain. This process continues until it either locates the property or reaches an object with a null prototype.
+
 **Extending a built-in prototype like array can potentially be risky as it might lead to unforeseen behavior if your method name clashes with others. Overriding built-in methods is generally discouraged.
+
+**POJO** Plain Old JavaScript Objects. 
 
 `this` https://leetcode.com/problems/array-prototype-last/editorial/
 
@@ -200,3 +208,25 @@ console.log(numbers); // [1, 5, 40, 200]
 
 Examples of stable sort algorithms include Merge Sort and TimSort (used by Python and Java, and also in V8 for arrays longer than 10 elements). On the contrary, QuickSort and HeapSort are examples of unstable sorting algorithms.
 
+`String()` is a global object constructor that converts and returns the string representation of an object. 
+
+We can modify the behavior of `String()` when called on our own custom objects by providing a custom `toString()` method in our object to control how our objects are represented as strings.
+
+`valueOf()` is a inbuilt function to return the primitive value of a specified object. When JavaScript tries to convert an object to a primitive value, first call `valueOf()` If `valueOf()` doesn't return a primitive value, then call `toString()`. By overwriting the `valueOf()`, we can control how an object behaves in mathematical operations. We can **emulate operator overloading**.
+
+`Array.join()`
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
+
+```
+const elements = ['Fire', 'Air', 'Water'];
+
+console.log(elements.join());
+// Expected output: "Fire,Air,Water"
+
+console.log(elements.join(''));
+// Expected output: "FireAirWater"
+
+console.log(elements.join('-'));
+// Expected output: "Fire-Air-Water"
+```
