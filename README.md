@@ -230,3 +230,7 @@ console.log(elements.join(''));
 console.log(elements.join('-'));
 // Expected output: "Fire-Air-Water"
 ```
+
+**Pure function** is a function that always returns the same output given the same inputs and doesn't have any side-effects.
+
+**Memoization** only works correctly for pure functions.
