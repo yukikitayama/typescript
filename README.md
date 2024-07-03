@@ -234,3 +234,31 @@ console.log(elements.join('-'));
 **Pure function** is a function that always returns the same output given the same inputs and doesn't have any side-effects.
 
 **Memoization** only works correctly for pure functions.
+
+**Debounce** makes the provided debounced function be called with the arguments with some delay `t`, after the debounced function is called. If the debounced function was called again before `t` has elapsed, the execution of the provided function should be cancelled and the timer reset.
+
+Use case of debounce
+- Only renders AFTER the user is done typing into a search field.
+- Zooming out on a chart via pinch-and-zoom, and only query for more data when the user is DONE zooming out.
+
+## Bascis and core concepts
+
+Types
+- `string`
+- `number`
+- `boolean`
+- Union `|`. `string | number`
+- Object (Use `;` because of defining type, not setting values)
+```
+let user: {
+  name: string;
+  age: number;
+  isAdmin: boolean;
+  id: string | number;
+};
+```
+- (`object`)
+
+Compile
+- `tsc file-name.ts`
+- `npx tsc file-name.ts`
