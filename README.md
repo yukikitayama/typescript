@@ -257,7 +257,40 @@ let user: {
   id: string | number;
 };
 ```
+- Array `Array<string>` (Uppercase), `string[]`
+- `void`. Used with function. `void` should be used as returned type if a function doesn't return anything.
+- Function type `calcFn: (a: number, b: number) => number`
+- Custom type by `type` keyword. 
+  - `type AddFn = (a: number, b: number) => number;`. `type StringOrNum = string | number;`. 
+  - **Starts with uppercase letter by convention**
+  - Use `=` to define
+- `interface`
+  - Essentially for creating objects and define object types.
+  - Don't use `=` to define. Directly `{}` to define.
+```
+interface Credentials {
+  password: string;
+  email: string;
+}
+let creds: Credentials;
+creds = {
+  password: "abc",
+  email: 'x@y.com'
+};
+```
+- Merged type
+  - Use `&` and multiple `type`s. `type1 & type2`
+  - Use `interface`, `extends` and multiple `interface`s.
+    - `interface MergedType extends Type1, Type2 {}`.
+- `undefined`
 - (`object`)
+
+Interface vs. custom type
+- In general, always use `type`.
+- You can't use `interface` to store a **union type**.
+- Using `class` and `implements`, you can implement `interface`. It forces a new class to have properties of the interface as **contracts of class**.
+- `interface` can be extendable or redefined.
+- For React purposes, we can use either interface or type.
 
 Compile
 - `tsc file-name.ts`
