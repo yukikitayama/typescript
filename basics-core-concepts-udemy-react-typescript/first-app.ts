@@ -79,3 +79,47 @@ admin = {
   permission: ['login'],
   userName: 'Yuki'
 }
+
+type Role = 'admin' | 'user' | 'editor' // admin, user, editor
+
+let role: Role;
+
+role = 'admin';
+role = 'user';
+role = 'editor';
+// role = 'abc';
+
+function performAction(action: string | number, role: Role) {
+  if (role === 'admin' && typeof action === 'string') {
+    // ...
+  }
+};
+
+type DataStorage<T> = {
+  storage: T[];
+  add: (data: T) => void;
+};
+
+const textStorage: DataStorage<string> = {
+  storage: [],
+  add(data) {
+    this.storage.push(data);
+  }
+};
+
+const userStorage: DataStorage<User> = {
+  storage: [],
+  add(user) {}
+};
+
+function merge<T, U>(a: T, b: U) {
+  return {
+    ...a,
+    ...b
+  }
+};
+
+const newUser = merge<{name: string}, {age: number}>({name: 'Max'}, {age: 34});
+
+newUser.name;
+newUser.age;

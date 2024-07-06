@@ -278,10 +278,24 @@ creds = {
   email: 'x@y.com'
 };
 ```
-- Merged type
+- **Merged** type
   - Use `&` and multiple `type`s. `type1 & type2`
   - Use `interface`, `extends` and multiple `interface`s.
     - `interface MergedType extends Type1, Type2 {}`.
+- **Literal** type
+  - `let role: 'admin';` limit the allowed value is only `'admin'`.
+  - To create multiple selection literal type, use Union `let role; 'admin' | 'user' | 'editor';`
+- **Generic** type
+  - Kind of a type placeholder as type information, because we don't know exactly in advance.
+  - Below, `T` is a generic type, we know we will have an array as storage value but we don't know the type yet.
+```
+type DataStorage<T> = {
+  storage: T[];
+  add: (data: T) => void;
+};
+
+const textStorage: DataStorage<string>;
+```
 - `undefined`
 - (`object`)
 
@@ -291,6 +305,13 @@ Interface vs. custom type
 - Using `class` and `implements`, you can implement `interface`. It forces a new class to have properties of the interface as **contracts of class**.
 - `interface` can be extendable or redefined.
 - For React purposes, we can use either interface or type.
+
+**Type guard** is a `if` statement that checks which concrete type is being used by checking the value of type assigned variable or checking the type by `typeof`. This operation of code is called **type narrowing**.
+- `typeof` operator to check if you are dealing with a specific type
+- `instanceof` operator to check fi an object value is based on some specific class
+- `in` operator to check if an object contains a specific property.
+
+You cannot check if a value meets the definition of a custom type (type alias) or interface type.
 
 Compile
 - `tsc file-name.ts`
