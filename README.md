@@ -4,6 +4,19 @@
 
 **Method chaining**, a function returns an object which includes methods. These methods can be invoked sequentially in a chain-line manner. It's a restricted form of method chaining as they don't return the original object for further chaining. 
 
+The fundamental principle behind method chaining is that each method returns an object, and then another method is called on that object. **Each method returns `return this;` in a class**. Method chaining is for producing clean, concise, and readable code. **Overuse of method chaining can lead to long, complex chains that can be difficult to debug and understand**.
+- Mathematical operations to perform multiple operations in sequence.
+- Data processing to perform a sequence of operations on data collections.
+- Object configuration to set multiple properties of an object in one line
+- Promise handling to handle asynchronous operations and reponses.
+
+```
+fetch('https://api.example.com/data')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
+```
+
 **Full method chaining** permits multiple methods to be invoked in a single statement, implemented when each method returns an object, which could be the original object or new object. It's readable and concise, preferred pattern in JavaScript. It allows the next method to be directly invoked on the previous method's result.
 
 **JavaScript error handling** uses `throw` statement to create custom error messages. A common and recommended approach is to throw an **error instance** by `throw new Error("Some message");`. `throw new AggregateError([_, _, ...])` can throw multiple errors at once.
