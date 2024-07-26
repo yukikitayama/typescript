@@ -138,11 +138,14 @@ Promise has 3 states
 - **Allows parallel execution of multiple asynchronous operations and combine the resutls**.
 - **Used to fetch data from multiple APIs simultaneously**.
 
-`setTimeout(callback, millisecond)` is a web API method to delay in the code execution. It's a method to call function or evaluate expression after a specified milliseconds. After the millisecond, callback is called.
+`setTimeout(callback, millisecond)` is a web API method to delay in the code execution. It's a method to call function or evaluate expression after a specified milliseconds. After the millisecond, callback is called. **To callback, you need to supply a function, do place a function execution**.
 
 `setTimeout()` vs. `setInterval()`
 - `setTimeout()` executes a function, after waiting the milliseconds
 - `setInterval()` repeats a function at every milliseconds time interval
+
+`NodeJS.Timeout` is the internal class that is created by node when using setTimeout or setInterval, it is the node equivalent to the number returned by setTimeout in a browser, but carries more information. 
+https://www.reddit.com/r/node/comments/at7fx9/what_means_nodejstimeout_i_havent_found_it_in_doc/
 
 `setInterval(function, delay milliseconds)` is used to repeat executing a function or code snippet with a fixed time delay between each call. It returns **interval ID (unique numeric value)**. The ID can be used later to identigy and control. `clearInterval(intervalID)` to cancel. **`setInterval` doesn't immediately call the function, so you need to manually call the function before setting the interval**.
 
@@ -329,3 +332,12 @@ You cannot check if a value meets the definition of a custom type (type alias) o
 Compile
 - `tsc file-name.ts`
 - `npx tsc file-name.ts`
+
+## Hashmap
+
+Use `new Map();`. To assing type, `new Map<string, number>();`
+
+To access value of key, `map.get(key)`, not `map[key]` which returns undefined.
+
+To save key-value pair, `map.set(key, value);`, not `map[key] = value`.
+
