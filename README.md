@@ -135,8 +135,14 @@ Promise has 3 states
 - It takes array of promises and returns a new promise that resolves when all the promises in array have resolved. 
 - It waits for all the promises to settle. 
 - **If any of the promises are `rejected`, the returned promise is `rejected` with the reason of the first `rejected` promise**.
+  - This behavior is called **fail-fast**.
 - **Allows parallel execution of multiple asynchronous operations and combine the resutls**.
 - **Used to fetch data from multiple APIs simultaneously**.
+
+`Promise.allSettled()`
+- Started with ECMAScript 2020
+- Always resolves after all the promises have settled, i.e., either fulfilled or rejected.
+- The resolved value is an array of objects that each describes the outcome of each promise.
 
 `setTimeout(callback, millisecond)` is a web API method to delay in the code execution. It's a method to call function or evaluate expression after a specified milliseconds. After the millisecond, callback is called. **To callback, you need to supply a function, do place a function execution**.
 
